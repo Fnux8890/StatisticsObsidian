@@ -1,0 +1,154 @@
+{
+  "main": {
+    "id": "16d2d20630c492b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "f37fe1739bf73a2f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Introduction.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      },
+      {
+        "id": "aebaf2ec3b0d3ebf",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Normal_Distribution.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fb62c3e828088d8f",
+    "type": "split",
+    "children": [
+      {
+        "id": "bcfc6bd47de7a1b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "732aee78e5f9fe97",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "956565c1e601b38d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "655d18e6db72c7ba",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "60f74824b69731cd",
+    "type": "split",
+    "children": [
+      {
+        "id": "05cf71def6defd6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "575fac5703e50a8c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Normal_Distribution.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b0cafcf3303836aa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Normal_Distribution.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "96abea03c62ef565",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "af636df48ce0d001",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Normal_Distribution.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "aebaf2ec3b0d3ebf",
+  "lastOpenFiles": [
+    "Normal_Distribution.md",
+    "Measures_Of_Central_Tendency.md",
+    "Mode.md",
+    "Median.md",
+    "Mean.md",
+    "Introduction.md",
+    "Student-T/Student-T_Distribution.md",
+    "Normal.md"
+  ]
+}
