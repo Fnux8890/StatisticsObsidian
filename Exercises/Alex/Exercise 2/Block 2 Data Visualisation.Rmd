@@ -1,0 +1,238 @@
+---
+title: "Block 2 Data Visualisation"
+author: "Alexander P Remfeldt"
+date: "2022-09-12"
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r}
+library("ggplot2")
+```
+
+# Pro Tips
+
+Insert R chunk: CTRL+ALT+I
+
+# 3.2.4 Exercises
+
+## 1 Run ggplot(data = mpg). What do you see?
+
+```{r}
+ggplot(data = mpg)
+```
+
+I only see a white square as the data isn't assigned to any dimensions
+and no type of plot is used.
+
+## 2 How many rows are in mpg? How many columns?
+
+In order to inspect mpg's rows and columns we can write the following:
+Either I inspect the amount of column names by using colnames(mpg) or I
+simply write ncol(mpg)
+
+```{r}
+colnames(mpg)
+```
+
+```{r}
+ncol(mpg)
+```
+
+I do the same with the amount of rows by using nrow(mpg)
+
+```{r}
+nrow(mpg)
+```
+
+Thus I can conclude that there are 11 columns and 234 rows in the mpg
+dataset
+
+## 3. What does the drv variable describe? Read the help for ?mpg to find out.
+
+```{r, echo=FALSE, message=FALSE }
+?mpg
+```
+
+By inspecting the documentation for the mpg dataset, under Format it
+describes the drv as follows: drv the type of drive train, where f =
+front-wheel drive, r = rear wheel drive, 4 = 4wd From this we can
+conclude that it's categorical. Which we could later use to plot for
+different drive trains if we wanted to.
+
+## 4. Make a scatterplot of hwy vs cyl.
+
+In order to make a scatter plot Ill use the ggplot library and in order
+to make it a scatterplot Ill use geom_point() Added labels to title, x
+and y and centered the title using theme(plot.title...) Reference: "How
+to Center Plot Title/subtitle in ggplot2":
+<https://datavizpyr.com/how-to-center-plot-title-and-subtitle-in-ggplot2/>
+
+```{r}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = cyl, y = hwy)) + 
+  labs(title = "Highway miles/gallon vs. Number of Cylinders",
+       x = "Number of Cylinders",
+       y = "Highway miles per gallon") + 
+  theme(plot.title = element_text(hjust=0.5))
+```
+
+## 5. What happens if you make a scatterplot of class vs drv? Why is the plot not useful?
+
+```{r}
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = class, y = drv)) + 
+  labs(title = "Type of car vs. Type of drive train",
+       x = "Type of car",
+       y = "Type of drive train") + 
+  theme(plot.title = element_text(hjust=0.5))
+```
+
+Both variables are categorical and it doesn't show any valuable
+information about the number of suv's that are either rear or 4wheel
+Just that they
+
+# 3.3.1 Exercises
+
+## 1. What's gone wrong with this code?
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+```
+
+The points are the wrong color. Instead it catogorizes the color. By
+inspecting the inner parantheses of the aes, we see that the parantheses
+are misplaces. Should envelop x and y, and then map color after.
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
+  
+  
+```
+
+## 2. Which variables in mpg are categorical? Which variables are continuous?
+
+By running below R chunk the documentation for the mpg dataset is shown
+in the Help pane with a description, how to use it and the format of
+each of the 11 variables. In the below commented section each variable
+is assigned either as a continuous, discrete or catagorical variable.
+
+```{r, echo=FALSE, message=FALSE}
+?mpg
+```
+
+```{=html}
+<!--A data frame with 234 rows and 11 variables:
+
+manufacturer
+  manufacturer name
+  [categorical]
+
+model
+  model name
+  [categorical]
+  
+displ
+  engine displacement, in litres
+  [continuous]
+  
+year
+  year of manufacture
+  [continuous]
+
+cyl
+  number of cylinders
+  [discrete]
+
+trans
+  type of transmission
+  [categorical]
+  
+drv
+  the type of drive train, where f = front-wheel drive, r = rear wheel drive, 4 = 4wd
+  [categorical]
+
+cty
+  city miles per gallon
+  [continuous]
+
+hwy
+  highway miles per gallon
+  [continuous]
+
+fl
+  fuel type
+  [categorical]
+
+class
+  "type" of car
+  [categorical]
+-->
+```
+## 3. Map a continuous variable to color, size, and shape. How do these aesthetics behave differently for categorical vs. continuous variables?
+
+First trying a scatter plot with categorical values. Since I chose shape
+= class I need to specify shapes manually using the scale_shape_manual
+function
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, y = class, color = class, size = cty, shape = class)) +
+  scale_shape_manual(values=c(15, 16, 17, 18, 19, 20, 21))
+```
+
+![Image showing a list of available
+shapes](https://ggplot2.tidyverse.org/reference/scale_shape-6.png) If we
+instead color by the continuous variable cty (city miles per gallon), we
+get a gradient, which is expected due to it being continious and not
+discrete values
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, y = class, color = cty, size = cty, shape = class)) +
+  scale_shape_manual(values=c(15, 16, 17, 18, 19, 20, 21))
+```
+
+## 4. What happens if you map the same variable to multiple aesthetics?
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, x = drv, y = class, color = cty, size = cty, shape = class)) +
+  scale_shape_manual(values=c(15, 16, 17, 18, 19, 20, 21))
+```
+
+Mapping the x axis to multiple variables returns this error: "Error in
+aes(x = cty, x = drv, y = class, color = cty, size = cty, shape = class)
+: formal argument"x" matched by multiple actual arguments"
+
+If however you map the same variable to multiple properteries like color
+and shape, it will work as in above plots.
+
+## 5. What does the stroke aesthetic do? What shapes does it work with? (Hint: use ?geom_point)
+
+In order to use stroke the shape must have both a fill and a color
+property. Shapes that have both are 21 - 25. Below is an example of a
+plot with a size depending on cty and a stroke size that is depending on
+a 10th of the cty value. The stroke color is set by using color while
+the filled part set by the size is set by using fill.
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, y = class, size = cty, stroke = cty / 10), shape = 21, color = "red", fill = "black")
+```
+
+## 6. What happens if you map an aesthetic to something other than a variable name, like aes(colour = displ \< 5)? Note, you'll also need to specify x and y.
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, y = class, color = cty >= 20))
+```
+
+By coloring on a conditional of cars that can run on 20 or more city
+miles per gallon (cty), we can clearly see fuel economical cars.

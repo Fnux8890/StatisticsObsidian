@@ -1,0 +1,142 @@
+{
+  "main": {
+    "id": "f366c12207bc5d2f",
+    "type": "split",
+    "children": [
+      {
+        "id": "ab22ae5298c7c2fd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c41b937246f60ef4",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4b052b5889615208",
+    "type": "split",
+    "children": [
+      {
+        "id": "39380e163f5fed99",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "df7a2fafa3689b2b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "7ddeb58b37a19cea",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f543a69ba2d58cc8",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "12a849ca8dadce0e",
+    "type": "split",
+    "children": [
+      {
+        "id": "dc59a5f9879d68ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "24410bc0ec18b9ae",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "bc7f3e49b03801df",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "c9aa83d814e2ee96",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2853a17c2aee717f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "c41b937246f60ef4",
+  "lastOpenFiles": [
+    "Mean.md",
+    "Introduction.md",
+    "Measures_Of_Central_Tendency.md",
+    "Mode.md",
+    "Median.md"
+  ]
+}
